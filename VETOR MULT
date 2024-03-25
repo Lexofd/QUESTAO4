@@ -1,0 +1,41 @@
+#include <stdio.h>
+#define TAM 3
+
+void leiaV(int v[], int tamanho) {
+    int i;
+    for(i=0; i<tamanho; i++)
+        scanf("%d", &v[i]);
+}
+
+void addV(int vRes[], int a[], int b[], int tamanho) {
+    int i;
+    for(i=0; i<tamanho; i++)
+        vRes[i] = a[i] + b[i];
+}
+
+void subV(int vRes[], int a[], int b[], int tamanho) {
+    int i;
+    for(i=0; i<tamanho; i++)
+        vRes[i] = a[i] - b[i];
+}
+
+int prodV(int a[], int b[], int tamanho) {
+    int i, soma=0;
+    for(i=0; i<tamanho; i++)
+        soma += a[i] * b[i];
+    return soma;
+}
+
+void printV(int v[], int tamanho) {
+    int i;
+    for(i=0; i<tamanho; i++)
+        printf("v[%d]=%d\n", i, v[i]);
+}
+
+int main() {
+    int a[TAM], b[TAM], c[TAM];
+    leiaV(a, TAM);
+    leiaV(b, TAM);
+    printf("%d\n", prodV(a, b, TAM)); // c = a - b
+    return 0;
+}
